@@ -102,7 +102,7 @@ public class HttpServer {
 
     private static String manageImg() throws IOException {
         String resultOutput;
-        File archivo = new File ("src/main/resources/imagen.JPG");
+        File archivo = new File ("src/main/resources/imagen.jpg");
         FileInputStream fIS = new FileInputStream (archivo);
         byte[] imageByte = new byte[(int)archivo.length()];
         fIS.read(imageByte);
