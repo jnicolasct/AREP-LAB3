@@ -6,7 +6,11 @@ import java.util.Base64;
 
 public class HttpServer {
 
-    public static void main(String[] args) throws IOException {
+    public HttpServer() {
+
+    };
+
+    public void start() throws IOException {
         ServerSocket serverSocket = null;
         String[] path = null;
         boolean activo = false;
