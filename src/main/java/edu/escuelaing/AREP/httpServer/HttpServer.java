@@ -53,7 +53,7 @@ public class HttpServer {
             if ((inputLine = in.readLine()) != null) {
                 path = inputLine.split("/");
             }
-            if (path != null) {
+            if (path.length != 0) {
                 if (path[1].contains(".html")) {
                     String docHtml = manageHtml();
                     outputLine = encabezado + docHtml;
