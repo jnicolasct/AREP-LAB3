@@ -1,15 +1,19 @@
 package edu.escuelaing.AREP.httpServer;
 
+import Persistence.MongoDB;
+
 import java.net.*;
 import java.io.*;
 import java.util.Base64;
 
 public class HttpServer {
+
+    MongoDB db;
     /**
      * Constructor de la clase HttpServer
      */
-    public HttpServer() {
-
+    public HttpServer(MongoDB db) {
+        this.db = db;
     };
 
     /**

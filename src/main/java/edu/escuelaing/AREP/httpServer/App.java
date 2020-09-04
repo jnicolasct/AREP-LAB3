@@ -1,5 +1,7 @@
 package edu.escuelaing.AREP.httpServer;
 
+import Persistence.MongoDB;
+
 import java.io.IOException;
 
 public class App {
@@ -10,7 +12,8 @@ public class App {
      * @throws IOException debido al menejo de archivos en HttpServer
      */
     public static void main(String[] args) throws IOException {
-        HttpServer server = new HttpServer();
+        MongoDB db = new MongoDB();
+        HttpServer server = new HttpServer(db);
         server.start();
     }
 }

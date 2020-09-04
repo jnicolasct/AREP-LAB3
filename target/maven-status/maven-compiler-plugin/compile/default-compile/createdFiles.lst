@@ -1,2 +1,3 @@
 edu\escuelaing\AREP\httpServer\App.class
+Persistence\MongoDB.class
 edu\escuelaing\AREP\httpServer\HttpServer.class
