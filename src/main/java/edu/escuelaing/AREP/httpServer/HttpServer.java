@@ -5,11 +5,17 @@ import java.io.*;
 import java.util.Base64;
 
 public class HttpServer {
-
+    /**
+     * Constructor de la clase HttpServer
+     */
     public HttpServer() {
 
     };
 
+    /**
+     * Metodo que inicia el servidor
+     * @throws IOException La excepcion es arrojada cuando no se encuentra un archivo
+     */
     public void start() throws IOException {
         ServerSocket serverSocket = null;
         String[] path = null;
@@ -100,6 +106,11 @@ public class HttpServer {
         serverSocket.close();
     }
 
+    /**
+     * Metodo que maneja la solicitud de una imagen
+     * @return un string que se refiere al mapa de bytes en base 64 de la imagen
+     * @throws IOException Arroja la excepcion si no se puede abrir el archivo
+     */
     private static String manageImg() throws IOException {
         String resultOutput;
         File archivo = new File ("src/main/resources/imagen.jpg");
@@ -109,6 +120,12 @@ public class HttpServer {
         resultOutput = Base64.getEncoder().encodeToString(imageByte).toString();
         return resultOutput;
     }
+
+    /**
+     * Metodo que maneja la solicitud de un archivo javaScript
+     * @return un string que se refiere al codigo de javaScript
+     * @throws IOException Arroja la excepcion si no se puede abrir el archivo
+     */
 
     private static String manageJSript() throws IOException {
         String resultOutput = "";
@@ -124,6 +141,12 @@ public class HttpServer {
 
     }
 
+    /**
+     * Metodo que maneja la solicitud de un archivo html
+     * @return un string que se refiere al codigo html escrito
+     * @throws IOException Arroja la excepcion si no se puede abrir el archivo
+     */
+
     private static String manageHtml() throws IOException {
         String resultOutput = "";
         File archivo = new File ("src/main/resources/prueba.html");
@@ -137,6 +160,10 @@ public class HttpServer {
         return resultOutput;
     }
 
+    /**
+     * Metodo que retorna el puerto sobre el que se va a ejecutar el servidor
+     * @return Puerto por el que se ejecuta el servidor
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
