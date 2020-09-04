@@ -1,6 +1,5 @@
 # AREP-LAB3
-
-[![CircleCI](https://circleci.com/gh/jnicolasct/AREP-LAB-HEROKU.svg?style=svg)](https://circleci.com/gh/jnicolasct/AREP-LAB3)
+[![CircleCI](https://circleci.com/gh/jnicolasct/AREP-LAB3.svg?style=svg)](https://circleci.com/gh/jnicolasct/AREP-LAB3)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://server-arep.herokuapp.com/)
 
