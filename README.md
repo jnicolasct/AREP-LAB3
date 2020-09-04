@@ -55,6 +55,7 @@ Para ver la prueba de la base de datos, se debe ingresar al link de heroku y hac
 ## Reporte
 
 El reporte fue generado mediante latex, su nombre es Media y Desviacion estadar. Se encuentra en la raiz del proyecto
+[report](https://github.com/jnicolasct/AREP-LAB3/blob/master/src/main/resources/Web_Server.pdf)
 
 ## Autor
   Johan Nicolas Cortes Torres
