@@ -89,6 +89,17 @@ public class HttpServer {
                             + docImg
                             + ">"
                             + fDHtml;
+
+                }else if (path[1].contains("baseMongo")) {
+                    String docMongo = manageMongo();
+                    outputLine =
+                            encabezado
+                                    + dHtml
+                                    + "<h1>Este son datos de la base de datos en MongoDB</h1>\n"
+                                    + "<h2>\n"
+                                    + docMongo
+                                    + "</h2>\n"
+                                    + fDHtml;
                 }else {
                     outputLine = encabezado
                             + dHtml
@@ -108,6 +119,14 @@ public class HttpServer {
             clientSocket.close();
         }
         serverSocket.close();
+    }
+
+    /**
+     * Metodo que consulta de la base de datos Mongo
+     * @return un string con todos los datos que se encuentran en la base de datos de Mongo
+     */
+    private String manageMongo() {
+        return db.select();
     }
 
     /**

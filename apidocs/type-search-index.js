@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.escuelaing.AREP.httpServer","l":"App"},{"p":"edu.escuelaing.AREP.httpServer","l":"HttpServer"},{"p":"Persistence","l":"MongoDB"}]

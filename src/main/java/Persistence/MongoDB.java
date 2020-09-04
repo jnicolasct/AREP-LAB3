@@ -1,6 +1,7 @@
 package Persistence;
 
 import com.mongodb.*;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -12,6 +13,9 @@ public class MongoDB {
     private MongoCollection collection;
     private MongoDatabase db;
 
+    /**
+     * Costructor de la clase, que permita crear la coneccion a la base de datos, Mongo
+     */
     public MongoDB(){
         MongoClientURI uri = new MongoClientURI(
                 "mongodb+srv://johancortes:cortesarep@cluster0.axuan.mongodb.net/areplab3?retryWrites=true&w=majority");
@@ -20,6 +24,9 @@ public class MongoDB {
         collection = db.getCollection("areplab3");
     }
 
+    /**
+     * Metodo que agrega documentos a la base de datos mongo
+     */
     public void add(){
         Document object = new Document();
         object.append("nombre","sirve1");
@@ -28,15 +35,19 @@ public class MongoDB {
         collection.insertOne(object);
     }
 
-    public ArrayList<Document> select(){
-        ArrayList<Document> registros = new ArrayList<Document>();
-        ArrayList<String> registrosNuevos = new ArrayList<String>();
-        for (Document d:registros){
-
+    /**
+     * Metodo que retorna los documentos que existen en a base de datos
+     * @return Lsita de los documentos que se encuetran en la base de datos
+     */
+    public String select(){
+        FindIterable<Document> registros = collection.find();
+        String datos = "";
+        for (Document r : registros){
+            datos+= "\n"+r.toJson();
         }
 
 
-        return registros;
+        return datos;
     }
 
 
